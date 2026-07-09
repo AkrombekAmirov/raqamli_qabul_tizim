@@ -1,0 +1,29 @@
+name: Deploy Bot
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # Bu joyda odatda serverga SSH orqali ulanib docker-compose up --build -d 
+    # qilinadigan skriptlar bo'ladi.
+    # Masalan, appleboy/ssh-action orqali:
+    # - name: Deploy to Server
+    #   uses: appleboy/ssh-action@master
+    #   with:
+    #     host: ${{ secrets.SERVER_HOST }}
+    #     username: ${{ secrets.SERVER_USER }}
+    #     key: ${{ secrets.SERVER_SSH_KEY }}
+    #     script: |
+    #       cd /path/to/raqamli_qabul_tizim
+    #       git pull origin main
+    #       docker compose up --build -d

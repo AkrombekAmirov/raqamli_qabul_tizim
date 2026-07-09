@@ -5,7 +5,7 @@ from aiogram.filters import Command, CommandObject, CommandStart
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, Message
 
-from app.ai_service import get_ai_response
+from app.gemini_service import get_ai_response
 from app.config import get_settings
 from app.db.crud import (
     create_application,

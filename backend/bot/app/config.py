@@ -26,9 +26,8 @@ class Settings(BaseSettings):
     redis_host: str = Field(default="redis", alias="REDIS_HOST")
     redis_port: int = Field(default=6379, alias="REDIS_PORT")
 
-    # Ollama AI
-    ollama_url: str = Field(default="http://host.docker.internal:11434", alias="OLLAMA_URL")
-    ollama_model: str = Field(default="qwen3:8b", alias="OLLAMA_MODEL")
+    # Gemini AI
+    gemini_api_key: str = Field(default="", alias="GEMINI_API_KEY")
     ai_enabled: bool = Field(default=True, alias="AI_ENABLED")
 
     log_level: str = Field(default="INFO", alias="LOG_LEVEL")
