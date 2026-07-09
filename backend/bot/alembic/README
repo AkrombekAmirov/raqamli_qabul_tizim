@@ -1,0 +1,15 @@
+Bu papka Alembic migratsiyalari uchun.
+
+Yangi migratsiya yaratish (modellar o'zgargach):
+    docker compose -f docker-compose.yml -f docker-compose.bot.yml run --rm bot \
+        alembic revision --autogenerate -m "ozgarish tavsifi"
+
+Migratsiyalarni qo'llash:
+    docker compose -f docker-compose.yml -f docker-compose.bot.yml run --rm bot \
+        alembic upgrade head
+
+Bir qadam orqaga qaytarish:
+    ... alembic downgrade -1
+
+Eslatma: bot konteyneri ishga tushganda entrypoint.sh avtomatik
+`alembic upgrade head` ni bajaradi.
